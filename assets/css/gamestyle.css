@@ -1,0 +1,9 @@
+/* img {
+    max-width: 100%;
+    height: auto;
+  } */
+
+  .image {
+    max-width: 800px;
+    height: auto;
+  }

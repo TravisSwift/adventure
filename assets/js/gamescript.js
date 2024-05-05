@@ -25,7 +25,7 @@ function showDealerInteraction() {
     const dealerInteraction = document.getElementById('dealerInteraction');
     dealerInteraction.innerHTML = `
         <p>You call your dealer, and he's cool for a visit. Time to prepare!</p>
-        <img src="./assets/images/Image6.png" alt="Player on the phone with his dealer">
+        <img class="image" src="./assets/images/Image6.png" alt="Player on the phone with his dealer">
         <button id="prepareVisit">Prepare for the visit</button>
     `;
     dealerInteraction.style.display = 'block'; // Show the dealer interaction div

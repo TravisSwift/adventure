@@ -3,17 +3,18 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./assets/css/gamestyle.css">
    <title>Create Your Own Adventure</title>
 </head>
 <body>
    <h1>Dude, where's my weed?</h1>
    <p>You've smoked your stash and you gotta score some more weed. Follow this "Create your own adventure" and see if you can score some weed without getting busted or beaten!</p>
-   <img id="initialImage" src="./assets/images/outofweed.png">
+   <img id="initialImage" class="image" src="./assets/images/outofweed.png">
    <button id="startGame" type="button">Let's score some weed!</button>
    
    <!-- The game content starts hidden -->
    <div id="gameContent" style="display: none;">
-       <img src="./assets/images/map.png" alt="Map showing locations to score weed">
+       <img class="image" src="./assets/images/map.png" alt="Map showing locations to score weed">
        <ul>
            <li><button id="callDealer">Call your dealer</button></li>
            <li><button id="goDispensary">Head across town to a dispensary</button></li>
