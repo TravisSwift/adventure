@@ -8,10 +8,13 @@
 </head>
 <body>
    <h1>Dude, where's my weed?</h1>
-   <p>You've smoked your stash and you gotta score some more weed. Follow this "Create your own adventure" and see if you can score some weed without getting busted or beaten!</p>
-   <img id="initialImage" class="image" src="./assets/images/outofweed.png">
-   <button id="startGame" type="button">Let's score some weed!</button>
-   
+    
+   <div id="initialContent"> <!-- Start of initial content -->
+        <img id="initialImage" src="./assets/images/outofweed.png">
+        <p>You've smoked your stash and you gotta score some more weed. Follow this "Create your own adventure" and see if you can score some weed without getting busted or beaten!</p>
+        <button id="startGame" type="button">Let's score some weed!</button>
+    </div> <!-- End of initial content -->
+    
    <!-- The game content starts hidden -->
    <div id="gameContent" style="display: none;">
        <img class="image" src="./assets/images/map.png" alt="Map showing locations to score weed">
@@ -30,6 +33,7 @@
    <script src="./assets/js/gamescript.js"></script>
 </body>
 </html>
+
 
 
 
