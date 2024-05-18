@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./assets/css/gamestyle.css">
-   <title>Create Your Own Adventure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dude, I Need Some Weed! A Create Your Own Adventure Game</title>
+    <link rel="stylesheet" href="./assets/css/gamestyle.css">
 </head>
 <body>
-   <h1>Dude, where's my weed?</h1>
-    
-   <div id="initialContent"> <!-- Start of initial content -->
-        <img id="initialImage" src="./assets/images/outofweed.png">
-        <p>You've smoked your stash and you gotta score some more weed. Follow this "Create your own adventure" and see if you can score some weed without getting busted or beaten!</p>
+    <h1>Dude, where's my weed?</h1>
+
+    <div id="initialContent">
+        <img id="initialImage" src="./assets/images/outofweed.png" alt="Out of weed">
+        <p>You've smoked your stash and you gotta score some more weed. Follow this "Create your own adventure" and see if you can score some weed without getting robbed, busted or beaten!</p>
         <button id="startGame" type="button">Let's score some weed!</button>
-    </div> <!-- End of initial content -->
-    
-   <!-- The game content starts hidden -->
-   <div id="gameContent" style="display: none;">
-       <img class="image" src="./assets/images/map.png" alt="Map showing locations to score weed">
-       <ul>
-           <li><button id="callDealer">Call your dealer</button></li>
-           <li><button id="goDispensary">Head across town to a dispensary</button></li>
-           <li><button id="goDowntown">Head downtown to score on the streets</button></li>
-       </ul>
-   </div>
+    </div>
 
-   <!-- Placeholder for dealer interaction -->
-   <div id="dealerInteraction" style="display: none;">
-       <!-- Content to be filled based on the scenario through JavaScript -->
-   </div>
+    <!-- The game content starts hidden -->
+    <div id="gameContent" style="display: none;">
+        <!-- Placeholder for dynamic game content -->
+        <div id="dynamicContent"></div>
+    </div>
 
-   <script src="./assets/js/gamescript.js"></script>
+    <script src="./assets/js/gamescript.js"></script>
 </body>
 </html>
+
+
+
 
 
 
