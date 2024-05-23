@@ -11,7 +11,9 @@ const images = {
     surfWin: './assets/images/surf_win.png',
     surfMeth: './assets/images/surf_meth.png',
     surfLose: './assets/images/surf_lose.png',
+    fightLose: './assets/images/fight_lose.png',
     beachBabes: './assets/images/beach_babes.png',
+    partyBabes: './assets/images/party_babes.png',
     dealersHouse: './assets/images/dealers_house.png',
     strangerDowntown: './assets/images/stranger_downtown.png',
     cops: './assets/images/cops.png',
@@ -91,16 +93,10 @@ function chooseSurfMethod() {
         <button id="shroomSurf">Consume some mushrooms</button>
     `;
 
-    document.getElementById('soberSurf').addEventListener('click', function() {
-        if (Math.random() > 0.5) {
-            surfWin();
-        } else {
-            surfLose();
-        }
-    });
-
+    document.getElementById('soberSurf').addEventListener('click', soberSurf);
     document.getElementById('shroomSurf').addEventListener('click', takeShrooms);
 }
+
 
 // Function to handle taking shrooms
 function takeShrooms() {
@@ -117,6 +113,20 @@ function takeShrooms() {
     document.getElementById('surfWithShrooms').addEventListener('click', surfing);
 }
 
+// Function to handle surfing sober
+function soberSurf() {
+    updateGameImage('surfing');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You've decided to take the surf challenge sober, good luck stoner.</p>
+        <p>You grab a board, hit the surf and paddle out into the ocean.</p>
+        <p>The Surf Punk calls out to you, "Alright Stoner, time to show me what you got!"</p>
+        <p>The ocean breathes around you, you stand on your board and catch the next wave. Prepare to surf dude!</p>
+        <button id="continueSurfSober">Surfs up, let's do this!</button>
+    `;
+
+    document.getElementById('continueSurfSober').addEventListener('click', surfingSober);
+}
 
 
 function surfing() {
@@ -127,8 +137,26 @@ function surfing() {
         <button id="continueJourney">Surf Challenge Results</button>
     `;
 
-    document.getElementById('continueJourney').addEventListener('click', surfWin);
+  document.getElementById('continueJourney').addEventListener('click', surfingSober);
 }
+
+function surfingSober() {
+    updateGameImage('surfing_sober');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You catch a massive wave and start your ride, but so does the surf punk as he drops in behind you. He starts ripping, forcing you to stall and knocking you off balance.</p>
+        <button id="continueJourney">Surf Challenge Results</button>
+    `;
+
+    document.getElementById('continueJourney').addEventListener('click', function() {
+        if (Math.random() > 0.5) {
+            surfWin();
+        } else {
+            surfLose();
+        }
+    });
+}
+
 
 // Function to handle winning the surf challenge
 function surfWin() {
@@ -192,7 +220,7 @@ function fightWin() {
 
 // Function to handle losing the fight with the surf punks
 function fightLose() {
-    updateGameImage('surf_lose');
+    updateGameImage('fightLose');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You lost the fight and got your ass kicked. The Surf Punks take your backpack, drugs, and money. "Get lost Stoner, you are not worthy to be on this beach!".  
@@ -264,7 +292,7 @@ function encounterBeachBabes() {
 
 // Function to handle hanging with the beach babes
 function hangWithBabes() {
-    updateGameImage('gameOver');
+    updateGameImage('partyBabes');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You share your stash with your new found Beach Babe friends. Sitting around a bonfire you sip whiskey, trip on shrooms, and watch the sun set on the oceans horizon. An absoultely beautifule evening but . . . you got distracted and forgot your dealer was going to the Pink Floyd Laser Light Show and now he is gone. No weed for you today, Stoner, I hope you got laid! Game over, Bro.</p>
