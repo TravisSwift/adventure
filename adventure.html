@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dude, I Need Some Weed! A Create Your Own Adventure Game</title>
     <link rel="stylesheet" href="./assets/css/gamestyle.css">
+    <title>Dude, I Need To Score! Create Your Own Adventure Game</title>
 </head>
 <body>
-    <h1>Dude, where's my weed?</h1>
+    <h1>Dude, I need weed!</h1>
 
     <div id="initialContent">
-        <img id="initialImage" src="./assets/images/outofweed.png" alt="Out of weed">
-        <p>You've smoked your stash and you gotta score some more weed. Follow this "Create your own adventure" and see if you can score some weed without getting robbed, busted or beaten!</p>
+        <img id="initialImage" src="./assets/images/bud_run.png" alt="Out of Weed">
+        <p>You've smoked the last of your stash and you gotta score some more weed. Follow this "Create your own adventure" and see if you can score some weed without getting busted, robbed, or beaten! Complete the game in the least possible amount of moves and your player gets a special treat!</p>
         <button id="startGame" type="button">Let's score some weed!</button>
     </div>
-
-    <!-- The game content starts hidden -->
+    
     <div id="gameContent" style="display: none;">
-        <!-- Placeholder for dynamic game content -->
-        <div id="dynamicContent"></div>
+        <img id="gameImage" src="" alt="Game Image">
+        <div id="dynamicContent">
+            <!-- Ensure callDealer button is here or is added dynamically before the script runs -->
+            <button id="callDealer">Call your dealer</button>
+        </div>
     </div>
 
     <script src="./assets/js/gamescript.js"></script>
 </body>
 </html>
+
+
 
 
 

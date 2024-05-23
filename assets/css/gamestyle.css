@@ -1,9 +1,69 @@
-/* img {
-    max-width: 100%;
-    height: auto;
-  } */
+/* Set the background to black and text color to white */
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 
-  .image {
-    max-width: 800px;
-    height: auto;
+/* Make the main container full screen */
+#initialContent, #gameContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Style buttons */
+button {
+  display: block;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px 0;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e14a29;
+}
+
+/* Ensure text and buttons stack nicely on small screens */
+p, ul, button {
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+/* Center everything in the main container */
+#dynamicContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Adjust button text size for larger screens */
+@media (min-width: 768px) {
+  button {
+      font-size: 1.2em;
   }
+}
