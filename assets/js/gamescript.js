@@ -11,7 +11,15 @@ const images = {
     surfWin: './assets/images/surf_win.png',
     surfMeth: './assets/images/surf_meth.png',
     surfLose: './assets/images/surf_lose.png',
+    surfTwo: './assets/images/surf_two.png',
     fightLose: './assets/images/fight_lose.png',
+    tacos: './assets/images/tacos.png',
+    tacos2: './assets/images/tacos2.png',
+    shrug: './assets/images/shrug.png',
+    explain: './assets/images/explain.png',
+    selfie: './assets/images/selfie.png',
+    readyFight: './assets/images/.png',
+    fightWin: './assets/images/fight_win.png',
     beachBabes: './assets/images/beach_babes.png',
     partyBabes: './assets/images/party_babes.png',
     dealersHouse: './assets/images/dealers_house.png',
@@ -141,7 +149,7 @@ function surfing() {
 }
 
 function surfingSober() {
-    updateGameImage('surfing_sober');
+    updateGameImage('surfTwo');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You catch a massive wave and start your ride, but so does the surf punk as he drops in behind you. He starts ripping, forcing you to stall and knocking you off balance.</p>
@@ -208,7 +216,7 @@ function fightPunks() {
 
 // Function to handle winning the fight with the surf punks
 function fightWin() {
-    updateGameImage('surfWin');
+    updateGameImage('fightWin');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You won the fight! "Okay Stoner, you're tougher then you look. The Surf Punk leader says, "It was a good fight Bro, Respect! Come back anytime" The surf punks let you pass.</p>
@@ -223,8 +231,8 @@ function fightLose() {
     updateGameImage('fightLose');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You lost the fight and got your ass kicked. The Surf Punks take your backpack, drugs, and money. "Get lost Stoner, you are not worthy to be on this beach!".  
-        Game over, Bro.</p>
+        <p>You lost the fight and got your ass kicked. The Surf Punks take your backpack, drugs, and money. "Get lost Stoner, you are not worthy to be on this beach!".  </P>
+        <p>Game over, Bro.</p>
         <button id="restartGame">Restart</button>
     `;
 
@@ -261,6 +269,7 @@ function offerMeth() {
 
 // Function to handle explaining the situation to the surf punks
 function explainSituation() {
+    updateGameImage('explain');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>The surf punks say, “Sorry bro, you’re just a loser with no weed."</p>
@@ -304,9 +313,15 @@ function hangWithBabes() {
 
 // Function to handle blowing off the beach babes
 function blowOffBabes() {
+    updateGameImage('shrug');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>Beach Babes response: "Whatever loser! You’re probably broke and dusty anyway!" The girls start coming at you wielding empty Corona bottles and really bad attitudes.</p>
+        <p>You explain that you've got shit to do and you don't have time to hang right now. </p>
+        <p>Beach Babes response: "Whatever loser!" </p>
+        </p>They pull out there cell phones and start live streaming what a creep you are.</p>
+        <p>OMG, Like, he should be so lucky!</p>
+        <p>Someone should call beach patrol!</p>
+        <p>You're probably broke and dusty anyway, creeper!</p>
         <button id="callOutKardashians">Call out, “Hey is that the Kardashians over there?”</button>
         <button id="offerBeer">Offer to buy them some beer and street tacos from the beach vendor</button>
     `;
@@ -317,7 +332,7 @@ function blowOffBabes() {
 
 // Function to handle calling out Kardashians
 function callOutKardashians() {
-    updateGameImage('beachBabes');
+    updateGameImage('selfie');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>The Beach Babes grab their cell phones and run down the beach to get a selfie for their social media feeds and you are free to continue your journey. You dodged a bullet, Stoner, good for you!</p>
@@ -329,7 +344,7 @@ function callOutKardashians() {
 
 // Function to handle offering beer and street tacos to the beach babes
 function offerBeer() {
-    updateGameImage('beachBabes');
+    updateGameImage('tacos2');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>It’s better to make friends instead of enemies. You buy the Beache Babes some Coronas and street tacos and they even give you their digits so you can hook up later. Good on you, Stoner, you're a good dude.</p>
@@ -351,8 +366,228 @@ function giveShrooms() {
     document.getElementById('continueJourney').addEventListener('click', dealersHouse);
 }
 
+
+// Function to handle hanging with the beach babes
+function hangWithBabes() {
+    updateGameImage('partyBabes');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You share your stash with your new found Beach Babe friends. Sitting around a bonfire you sip whiskey, trip on shrooms, and watch the sun set on the oceans horizon. An absoultely beautifule evening but . . . you got distracted and forgot your dealer was going to the Pink Floyd Laser Light Show and now he is gone. No weed for you today, Stoner, I hope you got laid! Game over, Bro.</p>
+        <button id="restartGame">Restart Game</button>
+    `;
+
+    document.getElementById('restartGame').addEventListener('click', restartGame);
+}
+
+// Function to handle blowing off the beach babes
+function blowOffBabes() {
+    updateGameImage('shrug');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You explain that you've got shit to do and you don't have time to hang right now. </p>
+        <p>Beach Babes response: "Whatever loser!" </p>
+        <p>They pull out their cell phones and start live streaming what a creep you are.</p>
+        <p>OMG, Like, he should be so lucky!</p>
+        <p>Someone should call beach patrol!</p>
+        <p>You're probably broke and dusty anyway, creeper!</p>
+        <button id="callOutKardashians">Call out, “Hey is that the Kardashians over there?”</button>
+        <button id="offerBeer">Offer to buy them some beer and street tacos from the beach vendor</button>
+    `;
+
+    document.getElementById('callOutKardashians').addEventListener('click', callOutKardashians);
+    document.getElementById('offerBeer').addEventListener('click', offerBeer);
+}
+
+// Function to handle calling out Kardashians
+function callOutKardashians() {
+    updateGameImage('selfie');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>The Beach Babes grab their cell phones and run down the beach to get a selfie for their social media feeds and you are free to continue your journey. You dodged a bullet, Stoner, good for you!</p>
+        <button id="continueJourney">Head to your dealer’s apartment</button>
+    `;
+
+    document.getElementById('continueJourney').addEventListener('click', encounterStreetPerformer);
+}
+
+// Function to handle offering beer and street tacos to the beach babes
+function offerBeer() {
+    updateGameImage('tacos2');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>It’s better to make friends instead of enemies. You buy the Beach Babes some Coronas and street tacos and they even give you their digits so you can hook up later. Good on you, Stoner, you're a good dude.</p>
+        <button id="continueJourney">Continue your journey to your dealer’s place</button>
+    `;
+
+    document.getElementById('continueJourney').addEventListener('click', encounterStreetPerformer);
+}
+
+// Function to handle giving the shrooms to the beach babes
+function giveShrooms() {
+    updateGameImage('beachBabes');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>Girls say, “OMG, Like shrooms are so groovy! Thanks Daddy!”</p>
+        <button id="continueJourney">Continue to your dealer’s house</button>
+    `;
+
+    document.getElementById('continueJourney').addEventListener('click', encounterStreetPerformer);
+}
+
+// Function to handle the street performer encounter
+function encounterStreetPerformer() {
+    updateGameImage('streetPerformer');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>As you walk along the beach, you come across a street performer juggling knives with impressive skill. He catches your eye and calls you over.</p>
+        <p>"Hey there, buddy! You look like you're in need of some good stuff. How about a deal? I'll sell you a quarter ounce for $100."</p>
+        <button id="acceptOffer">Accept the offer and pay the performer</button>
+        <button id="questionLegitimacy">Question the performer's legitimacy</button>
+        <button id="seeWeed">Ask to see the weed first</button>
+        <button id="ignorePerformer">Ignore the performer and walk away</button>
+    `;
+
+    document.getElementById('acceptOffer').addEventListener('click', acceptOffer);
+    document.getElementById('questionLegitimacy').addEventListener('click', questionLegitimacy);
+    document.getElementById('seeWeed').addEventListener('click', seeWeed);
+    document.getElementById('ignorePerformer').addEventListener('click', ignorePerformer);
+}
+
+// Function to handle accepting the offer
+function acceptOffer() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You hand over the $100. The performer grabs the cash and runs off into the crowd.</p>
+        <button id="takeLoss">Take the loss and move on</button>
+        <button id="pursuePerformer">Pursue the performer</button>
+    `;
+
+    document.getElementById('takeLoss').addEventListener('click', continueJourneyToDealersHouse);
+    document.getElementById('pursuePerformer').addEventListener('click', pursuePerformer);
+}
+
+// Function to handle pursuing the performer
+function pursuePerformer() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>How do you want to pursue the performer?</p>
+        <button id="pursueWithoutMeth">Just go after the thief</button>
+        <button id="pursueWithMeth">Take a bump of meth</button>
+    `;
+
+    document.getElementById('pursueWithoutMeth').addEventListener('click', function() {
+        if (Math.random() < 0.5) {
+            successChase();
+        } else {
+            failChase();
+        }
+    });
+
+    document.getElementById('pursueWithMeth').addEventListener('click', successChase);
+}
+
+// Function to handle successful chase
+function successChase() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You tackle the performer and grab your cash back. The performer flees, and you continue your journey. Shaking your head you think, “What’s the world coming to when you can’t trust a street performer!”</p>
+        <button id="continueJourney">Continue on your journey</button>
+    `;
+    document.getElementById('continueJourney').addEventListener('click', continueJourneyToDealersHouse);
+}
+
+// Function to handle failed chase
+function failChase() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>The juggler is too quick and you lose him in the crowd. Bummer dude, you lost the cash.</p>
+        <button id="continueJourney">Continue on your journey</button>
+    `;
+    document.getElementById('continueJourney').addEventListener('click', continueJourneyToDealersHouse);
+}
+
+// Function to handle questioning the performer's legitimacy
+function questionLegitimacy() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    const isCop = Math.random() < 0.2;
+    if (isCop) {
+        dynamicContent.innerHTML = `
+            <p>The performer looks offended and then flashes a badge. "Alright, you've got guts, but this is where it ends." The performer arrests you for attempting to buy drugs.</p>
+            <p>Busted! You're under arrest for attempting to buy drugs. Game over.</p>
+            <button id="restartGame">Restart</button>
+        `;
+        document.getElementById('restartGame').addEventListener('click', function() {
+            location.reload();
+        });
+    } else {
+        dynamicContent.innerHTML = `
+            <p>The performer looks offended and raises his voice. "You questioning me? I should call the beach cops and tell them you're selling here!"</p>
+            <button id="callBluff">Call his bluff</button>
+            <button id="apologize">Apologize and walk away</button>
+        `;
+        document.getElementById('callBluff').addEventListener('click', callBluff);
+        document.getElementById('apologize').addEventListener('click', ignorePerformer);
+    }
+}
+
+// Function to handle calling the performer's bluff
+function callBluff() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>The performer glares at you but then leaves without causing a scene. The encounter ends.</p>
+        <button id="continueJourney">Continue on your journey</button>
+    `;
+    document.getElementById('continueJourney').addEventListener('click', continueJourneyToDealersHouse);
+}
+
+// Function to handle asking to see the weed first
+function seeWeed() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>The performer glances around and shows you a glance of a small bag from his pocket.</p>
+        <button id="buyBag">Buy the bag</button>
+        <button id="questionBag">Question the bag's contents</button>
+    `;
+    document.getElementById('buyBag').addEventListener('click', buyBag);
+    document.getElementById('questionBag').addEventListener('click', questionBagContents);
+}
+
+// Function to handle buying the bag
+function buyBag() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You choose the amount to buy and hand over the money. The performer runs off into the crowd.</p>
+        <button id="pursuePerformer">Pursue the performer</button>
+        <button id="takeLoss">Take the loss and move on</button>
+    `;
+    document.getElementById('pursuePerformer').addEventListener('click', pursuePerformer);
+    document.getElementById('takeLoss').addEventListener('click', continueJourneyToDealersHouse);
+}
+
+// Function to handle questioning the bag's contents
+function questionBagContents() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>The performer gets defensive. "It's the real deal, man. Take it or leave it."</p>
+        <button id="buyBag">Buy the bag</button>
+        <button id="walkAway">Walk away</button>
+    `;
+    document.getElementById('buyBag').addEventListener('click', buyBag);
+    document.getElementById('walkAway').addEventListener('click', ignorePerformer);
+}
+
+// Function to handle ignoring the performer
+function ignorePerformer() {
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>You decide not to engage with the performer and walk away. The encounter ends.</p>
+        <button id="continueJourney">Continue on your journey</button>
+    `;
+    document.getElementById('continueJourney').addEventListener('click', continueJourneyToDealersHouse);
+}
+
 // Function to handle reaching the dealer's house
-function dealersHouse() {
+function continueJourneyToDealersHouse() {
     updateGameImage('dealersHouse');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
@@ -362,6 +597,7 @@ function dealersHouse() {
 
     document.getElementById('restartGame').addEventListener('click', restartGame);
 }
+
 
 // Function to handle the downtown scenario
 function goDowntown() {
