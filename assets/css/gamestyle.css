@@ -6,6 +6,11 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  
+}
+
+ul {
+  list-style: none;
 }
 
 /* Make the main container full screen */
