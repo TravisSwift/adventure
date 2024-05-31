@@ -7,27 +7,33 @@
     <title>BUD RUN! Create Your Own Adventure Game</title>
 </head>
 <body>
-    <!-- <h1>BUD RUN!</h1> -->
-
     <div id="initialContent">
         <img id="initialImage" src="./assets/images/bud_run.png" alt="Out of Weed">
-         <p>BUD RUN</p> 
-        <p>Dude, you've smoked the last of your stash and now you gotta score more weed. </p>
-        <p> Follow this "Create your own adventure" and see if you can score some bud without getting busted, robbed, or beaten!</p>
-        <button id="startGame" type="button">Let's score some weed!</button>
+        <div class="text-container">
+            <p>BUD RUN</p>
+            <p>Dude, you've smoked the last of your stash and now you gotta score more weed. </p>
+            <p>Follow this "Create your own adventure" and see if you can score some bud without getting busted, robbed, or beaten!</p>
+        </div>
+        <div class="button-container">
+            <button id="startGame" type="button">Let's score some weed!</button>
+        </div>
     </div>
     
     <div id="gameContent" style="display: none;">
         <img id="gameImage" src="" alt="Game Image">
         <div id="dynamicContent">
-            <!-- Ensure callDealer button is here or is added dynamically before the script runs -->
-            <button id="callDealer">Call your dealer</button>
+            <div class="button-container">
+                <button id="callDealer">Call your dealer</button>
+                <!-- Additional buttons can be added here -->
+            </div>
         </div>
     </div>
 
     <script src="./assets/js/gamescript.js"></script>
 </body>
 </html>
+
+
 
 
 

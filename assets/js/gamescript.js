@@ -95,7 +95,7 @@ function callDealer() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
     <p>You call your dealer!</p>    
-    <p>Your dealer says it’s all good man, come on over. He'll be home for two hours before heading out to the Pink Floyd Laser Light Show so hurry up!</p>
+    <p>Your dealer says it’s all good man, come on over. Hell be home for two hours before heading out to the Pink Floyd Laser Light Show so hurry up!</p>
         <p> This path takes you down the beach to your dealer's apartment. You grab your backpack and head out. Your backpack contains the following items to help you on your way:</p>
         <ul>
             <li>An half ounce of mushrooms</li>
@@ -836,7 +836,7 @@ function yellAtCops() {
     updateGameImage('cops9');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You don't feel like dealing with their shit today and you defiantly call out, "Fuck You, Pigs!</p>>        
+        <p>You don't feel like dealing with their shit today and you defiantly call out, "Fuck You, Pigs!</p>       
         <button id="restartGame">See what happens</button>
     `;
 

@@ -6,7 +6,6 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  
 }
 
 ul {
@@ -23,6 +22,12 @@ ul {
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+}
+
+/* Ensure text inside #initialContent is centered */
+#initialContent p {
+  text-align: center;
+  width: 100%;
 }
 
 /* Make images responsive */
@@ -66,9 +71,29 @@ p, ul, button {
   width: 100%;
 }
 
+/* Style the button container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Center the text-container */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 /* Adjust button text size for larger screens */
 @media (min-width: 768px) {
   button {
       font-size: 1.2em;
   }
 }
+
+
+
+
