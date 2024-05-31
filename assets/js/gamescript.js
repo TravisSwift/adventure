@@ -49,6 +49,7 @@ const images = {
     cops6: './assets/images/cops_6.png',
     cops7: './assets/images/cops_7.png',
     cops8: './assets/images/cops_8.png',
+    cops9: './assets/images/cops_9.png',
     arcade: './assets/images/arcade.png',
     arcade1: './assets/images/arcade_1.png',
     arcade2: './assets/images/arcade_2.png',
@@ -79,8 +80,8 @@ function showInitialChoices() {
     updateGameImage('initial');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>Where are you going to go to score?</P>
-        <p> You can head to your dealers place or you can go downtown. Each choice has its own challenges and risks. Choose wisely, stoner, and hopefully, you score some sweet bud!</p>
+        <p>Where are you going to go to buy some weed?</P>
+        <p> You can head to your dealers place or you can go downtown and score on the streets. Each choice has its own challenges and risks. Choose wisely, stoner, and hopefully, you score some sweet bud!</p>
         <button id="callDealer">Call your dealer</button>
         <button id="goDowntown">Head downtown</button>
     `;
@@ -94,7 +95,7 @@ function callDealer() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
     <p>You call your dealer!</p>    
-    <p>Your dealer says it’s all good man, come on over. He will be home for two hours before heading out to the Pink Floyd Laser Light Show so hurry up!</p>
+    <p>Your dealer says it’s all good man, come on over. He'll be home for two hours before heading out to the Pink Floyd Laser Light Show so hurry up!</p>
         <p> This path takes you down the beach to your dealer's apartment. You grab your backpack and head out. Your backpack contains the following items to help you on your way:</p>
         <ul>
             <li>An half ounce of mushrooms</li>
@@ -112,11 +113,11 @@ function encounterSurfPunks() {
     updateGameImage('surfPunks');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-    <p>You head out walking along the beach taking in the sun, water, and thinking about the bug you're gonna be smoking soon.</p>
-        <p>Soon you encounter a group of surf punks blocking your way and they are not cool. "This is our turf, stoner, and you're not welcome here. You can fight or you can surf!"</p>
+    <p>You head out walking along the beach taking in the sun, water, and thinking about the bud you're gonna be smoking tonight.</p>
+        <p>Soon, you encounter a group of surf punks blocking your way and they are not cool. "This is our turf, stoner, and you're not welcome here. You can fight or you can surf!"</p>
         <button id="surfChallenge">Accept the challenge to surf</button>
         <button id="fightPunks">Fight these punks</button>
-        <button id="offerMeth">Offer them some meth</button>
+        <button id="offerMeth">Offer them some drugs</button>
         <button id="explain">Explain you’re just a stoner out to score some weed</button>
     `;
 
@@ -177,7 +178,7 @@ function surfing() {
     updateGameImage('surfing');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You catch a massive wave and start your ride, but so does the surf punk as he drops in behind you. He starts ripping, forcing you to stall and knocking you off balance. WIth the shrooms in full effect you smile and realize you are the wave.</p>
+        <p>You catch a massive wave and start your ride, but so does the surf punk as he drops in behind you. He starts ripping, forcing you to stall and knocking you off balance. WIth the shrooms in full effect you smile and realize you are the wave, ain't nothing stopping you now.</p>
         <button id="continueJourney">Keep surfing, Brah!</button>
     `;
 
@@ -189,29 +190,12 @@ function shroomSurf() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
          <p>This kook is gonna do everything he can to smoke you, surf strong, Brother!</p>
-         <p>He reaches out to push you off your board as you blast out of the curl. You start pumping and as you push forward you nose ride and leave this him behind you. You're not worried about this punk at all.</p>
+         <p>He reaches out to push you off your board as you blast out of the curl. You start pumping push forward as you you ride the nose of you rboard leaving this him behind you. You're not worried about this punk at all.</p>
        
         <button id="continueJourney">Surf Challenge Results</button>
     `;
     document.getElementById('continueJourney').addEventListener('click', surfWin);
 }
-
-// function surfingSober() {
-//     updateGameImage('surfTwo');
-//     const dynamicContent = document.getElementById('dynamicContent');
-//     dynamicContent.innerHTML = `
-//         <p>You catch a massive wave and start your ride, but so does the surf punk as he drops in behind you. He starts ripping, forcing you to stall and knocking you off balance.</p>
-//         <button id="continueJourney">Surf Challenge Results</button>
-//     `;
-
-//     document.getElementById('continueJourney').addEventListener('click', function() {
-//         if (Math.random() > 0.5) {
-//             surfWin();
-//         } else {
-//             surfLose();
-//         }
-//     });
-// }
 
 
 function surfingSober() {
@@ -272,7 +256,7 @@ function fightPunks() {
     `;
 
     document.getElementById('soberFight').addEventListener('click', function () {
-        if (Math.random() > 0.5) {
+        if (Math.random() > 0.6) {
             fightWin();
         } else {
             fightLose();
@@ -289,7 +273,8 @@ function fightWin() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You won the fight! </p>
-        <p>"Okay Stoner, you're tougher then you look" the Surf Punk leader says. "It was a good fight Bro, Respect! Come back anytime". You stood up for yourself and made some new friends. The surf punks let you pass.</p>
+        <p>"Okay Stoner, you're tougher then you look" the Surf Punk leader says. "It was a good fight Bro, Respect! Come back anytime". </p>
+        <p>You stood up for yourself and made some new friends.</p>
         <button id="continueJourney">Continue to your dealer's house</button>
     `;
 
@@ -316,8 +301,8 @@ function continueJourneyToDealersHouse() {
     updateGameImage('beachBabes'); // Assuming next encounter is with beach babes
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>Walking down the beach you see a group of Beach Babe Stoner Chicks who instantly run your way. They approach you asking if you want to stay and party.</p>
-        <button id="hangWithBabes">Hang with the beach babes, share your stash and maybe get laid</button>
+        <p>Continuing your journey, you see a group of Beach Babe Stoner Chicks who instantly run your way. Awww yeah! They approach you asking if you want to stay and party.</p>
+        <button id="hangWithBabes">Hang with the beach babes and maybe get laid</button>
         <button id="blowOffBabes">Blow them off, you got weed to score</button>
         <button id="giveShrooms">Give them some shrooms, wish them well and be on your way</button>
     `;
@@ -332,7 +317,7 @@ function offerMeth() {
     updateGameImage('surfMeth');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>The surf punks accept the meth and let you pass. "Alright dude, we'll take your meth and surf till dawn. This will catch you some slack today, but don’t ever come back unless you want to surf or fight!"</p>
+        <p>The surf punks accept the meth and let you pass. "Alright dude, we'll take some shrooms and meth and surf till dawn. This will catch you some slack today, but don’t ever come back unless you want to surf or fight!"</p>
         <button id="continueJourney">Continue to your journey.</button>
     `;
 
@@ -361,7 +346,7 @@ function encounterBeachBabes() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
     <p>Walking down the beach you see a group of Beach Babe Stoner Chicks who instantly run your way. They approach you asking if you want to stay and party.</p>
-        <button id="hangWithBabes">Hang with the beach babes, share your stash and maybe get laid</button>
+        <button id="hangWithBabes">Hang with the beach babes and maybe get laid</button>
         <button id="blowOffBabes">Blow them off, you got weed to score</button>
         <button id="giveShrooms">Hook them up with some shrooms, tell them you will come back later and be on your way</button>
     `;
@@ -443,35 +428,6 @@ function giveShrooms() {
 }
 
 
-// Function to handle hanging with the beach babes
-// function hangWithBabes() {
-//     updateGameImage('partyBabes');
-//     const dynamicContent = document.getElementById('dynamicContent');
-//     dynamicContent.innerHTML = `
-//         <p>You share your stash with your new found Beach Babe friends. Sitting around a bonfire you sip whiskey, trip on shrooms, and watch the sun set on the oceans horizon. An absoultely beautifule evening but . . . you got distracted and forgot your dealer was going to the Pink Floyd Laser Light Show and now he is gone. No weed for you today, Stoner, I hope you got laid! Game over, Bro.</p>
-//         <button id="restartGame">Restart Game</button>
-//     `;
-
-//     document.getElementById('restartGame').addEventListener('click', restartGame);
-// }
-
-// Function to handle blowing off the beach babes
-// function blowOffBabes() {
-//     updateGameImage('shrug');
-//     const dynamicContent = document.getElementById('dynamicContent');
-//     dynamicContent.innerHTML = `
-//     <p>You explain that you've got shit to do and you don't have time to hang right now. </p>
-//     <p>Beach Babes response: "Whatever loser!" They pull out there cell phones and start live streaming.</p>
-//     <p>Like, OMG, he should be so lucky!</p>
-//     <p>Someone should call Alpha police, we have a beta on the beach!</p>
-//     <p>You're probably broke and dusty anyway, creeper!</p>
-//     <button id="callOutKardashians">Call out, “Hey is that the Kardashians over there?”</button>
-//     <button id="offerBeer">Offer to buy them some beer and street tacos from the beach vendor</button>
-//     `;
-
-//     document.getElementById('callOutKardashians').addEventListener('click', callOutKardashians);
-//     document.getElementById('offerBeer').addEventListener('click', offerBeer);
-// }
 
 // Function to handle calling out Kardashians
 function callOutKardashians() {
@@ -479,7 +435,7 @@ function callOutKardashians() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>The Beach Babes grab their cell phones and run down the beach to get a selfie for their social media feeds and you are free to continue your journey. You dodged a bullet, Stoner, good for you!</p>
-        <button id="continueJourney">Head to your dealer’s apartment</button>
+        <button id="continueJourney">Continue your journey</button>
     `;
 
     document.getElementById('continueJourney').addEventListener('click', encounterStreetPerformer);
@@ -515,7 +471,7 @@ function encounterStreetPerformer() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>As you walk along the beach, you come across a street performer juggling knives with impressive skill. He catches your eye and calls you over.</p>
-        <p>"Hey there, buddy! You look like you're in need of some good stuff. How about a deal? I'll sell you a quarter ounce for $100."</p>
+        <p>"Hey there, buddy! You look like you're in need of some good stuff. How about a deal? I'll sell you a half ounce for $100."</p>
         <button id="acceptOffer">Accept the offer and pay the performer</button>
         <button id="questionLegitimacy">Question the performer's legitimacy</button>
         <button id="seeWeed">Ask to see the weed first</button>
@@ -590,11 +546,11 @@ function failChase() {
 function questionLegitimacy() {
     updateGameImage('performer5');
     const dynamicContent = document.getElementById('dynamicContent');
-    const isCop = Math.random() < 0.5;
+    const isCop = Math.random() < 0.3;
     if (isCop) {
         dynamicContent.innerHTML = `
             <p>The performer looks offended and then flashes a badge. "Alright, you've got guts, but this is where it ends." The performer arrests you for attempting to buy drugs.</p>
-            <p>Busted! You're under arrest for attempting to buy drugs. Game over.</p>
+            <p>Sorry dude, you're Busted! Game over.</p>
             <button id="restartGame">Restart</button>
         `;
         document.getElementById('restartGame').addEventListener('click', function () {
@@ -617,6 +573,7 @@ function callBluff() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>The performer glares at you but then leaves without causing a scene.</p>
+        <p>Smart move, Stoner.</P>
         <button id="continueJourney">Continue on your journey</button>
     `;
     document.getElementById('continueJourney').addEventListener('click', continueJourneyToDealersHouse);
@@ -639,7 +596,7 @@ function seeWeed() {
 function buyBag() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You choose the amount to buy and hand over the money. The performer runs off into the crowd.</p>
+        <p>You hand over $100.00 and the street performer runs off into the crowd.</p>
         <button id="pursuePerformer">Pursue the performer</button>
         <button id="takeLoss">Take the loss and move on</button>
     `;
@@ -663,7 +620,7 @@ function questionBagContents() {
 function ignorePerformer() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You decide not to engage with the performer and walk away. The encounter ends.</p>
+        <p>This guy is sus and you decide to walk away. Smart move, Stoner.</p>
         <button id="continueJourney">Continue on your journey</button>
     `;
     document.getElementById('continueJourney').addEventListener('click', continueJourneyToDealersHouse);
@@ -676,7 +633,7 @@ function continueJourneyToDealersHouse() {
     dynamicContent.innerHTML = `
         <p>Dude! You finally made it to your dealer's house and scored some weed! </p>
         <p> You smoke a few joints, share the story of your bud run, and have some great laughs.</p>
-        <p>Great job, Stoner!</p>
+        <p>Great job, Stoner, you won the game!</p>
         <button id="restartGame">Restart</button>
     `;
 
@@ -689,7 +646,7 @@ function goDowntown() {
     updateGameImage('headDowntown');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You grab your backpack and head out. This path takes you downtown where you will have to move past cops and skid row to get to the arcade. Your backpack contains the following items to help you on your way:</p>
+        <p>You grab your backpack and head out. This path takes you downtown where you will have to move past cops, skid row, and who knows what else. Your backpack contains the following items to help you on your way:</p>
         <ul>
             <li>An eighth of mushrooms</li>
             <li>A bottle of Adderall</li>
@@ -707,7 +664,7 @@ function initialEncounterStranger() {
     updateGameImage('homeless1');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>Heading downtown you enter the heart of Anytown. Soon you are approached by a stranger.</p>
+        <p>Heading out you enter the heart of Anytown. Soon you are approached by a some rando homeless guy.</p>
         <p>"${getRandomStrangerResponse()}"</p>
         <button id="giveMoney">Give him $20.00</button>
         <button id="sayNo">Say, “Take a hike, Bro, I know this scam”</button>
@@ -761,7 +718,9 @@ function getRandomStrangerResponse() {
         "I've got 99 problems and a bitch ain't one, but I do need a few dollars for some whiskey, I mean, booze, I mean, food. Yeah, food.",
         "Hey, my friend Fonzie needs to get to California so he can jump a shark and show the California Kid he's not a coward, so for just a few dollars . . .",
         "Hey, I'm sober, give me some fucking money.",
-        "Klaatu barada nikto."
+        "Klaatu barada nikto.",
+        "Have you ever danced with the devil in the pale moonlight? Well, it costs $20.00 so, if you could help me out . . ."
+
 
     ];
     let responseIndex;
@@ -787,7 +746,7 @@ function sayNoToStranger() {
     updateGameImage('homeless4');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>The stranger gets mad that you won’t give him any money and takes a swing at you.</p>
+        <p>This dude gets mad that you won’t give him any money and takes a swing at you.</p>
         <button id="fightStranger">Fight</button>
         <button id="giveMoney">Give him $20.00</button>
         <button id="giveWhiskey">Give him the pint of whiskey</button>
@@ -804,6 +763,7 @@ function fightStranger() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>A homeless, hungover bum is no match for you. You take a swing and he runs off back into Skid Row.</p>
+        
         <button id="continueJourney">Continue downtown</button>
     `;
 
@@ -815,7 +775,7 @@ function giveWhiskeyToStranger() {
     updateGameImage('homeless6');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>"Thank you, Thank you, good Sir" he mumbles as he takes the pint of whiskey and leaves.</p>
+        <p>"Thank you, Thank you, good Sir!" he mumbles as he takes the pint of whiskey and wanders away.</p>
         <button id="continueJourney">Continue downtown</button>
     `;
 
@@ -840,8 +800,8 @@ function encounterCops() {
     dynamicContent.innerHTML = `
         <p>Walking downtown you see a group of cops on the corner and they are eyeballing you.</p>
         <button id="keepHeadDown">Keep your head down and your mouth shut and walk on by</button>
-        <button id="yellAtCops">Yell “Fuck you pigs” as you walk by</button>
-        <button id="nodAtCops">Make eye contact and give a nod of “what’s up” as you walk by</button>
+        <button id="yellAtCops">Yell out “Fuck you pigs” as you walk by</button>
+        <button id="nodAtCops">Make eye contact and give a nod of “what’s up” as you keep on walking/button>
     `;
 
     document.getElementById('keepHeadDown').addEventListener('click', keepHeadDown);
@@ -873,7 +833,7 @@ function keepHeadDown() {
 
 // Function to handle yelling at cops
 function yellAtCops() {
-    updateGameImage('cops4');
+    updateGameImage('cops9');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You don't feel like dealing with their shit today and you defiantly call out, "Fuck You, Pigs!</p>>        
@@ -888,7 +848,7 @@ function busted() {
     updateGameImage('cops5');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You stood up to the law and you lost. The cops beat your ass, take your money and drugs and put you in jail. No weed for you today, Stoner, and the game is over.</p>
+        <p>You fought the law and the law won. The cops beat your ass, take your money and drugs and put you in jail. No weed for you today, Stoner, and the game is over.</p>
         <button id="restartGame">Restart</button>
     `;
 
@@ -932,7 +892,7 @@ function runFromCops() {
     } else {
         updateGameImage('cops5');
         dynamicContent.innerHTML = `
-            <p>You stood up to the law and you lost. The cops beat your ass, take your money, your drugs, and put you in jail. No weed for you today, Stoner, and the game is over.</p>
+            <p>You fought the law and the law won. The cops beat your ass, take your money, your drugs, and put you in jail. No weed for you today, Stoner, and the game is over.</p>
             <button id="restartGame">Restart</button>
         `;
         document.getElementById('restartGame').addEventListener('click', restartGame);
@@ -987,8 +947,7 @@ function playDumb2() {
     const dynamicContent = document.getElementById('dynamicContent');
  
         dynamicContent.innerHTML = `
-        <p>Cops say, “Too stoned and stupid, huh? Maybe we need to beat a little intelligence into you?”</p>
-        // <p>The cops don't see you as a threat and let you go on your way. "You’re too stoned and stupid to cause /any trouble here. Now get your hippie ass out of our sight!"</p>
+        <p>"You’re too stoned and stupid to cause any trouble here. Now get your hippie ass out of our sight!"</p>
         <button id="continueJourney">Continue downtown</button>
     `;
     document.getElementById('continueJourney').addEventListener('click', reachArcade);
@@ -1001,7 +960,7 @@ function reachArcade() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You’ve successfully evaded the police and made it downtown. You look around and see someone who looks like a fellow stoner. “Hey Bro, do you know where I can score some weed?”</p>
-        <p>Totally, dude. Check inside the arcade, Peace Out Phil is inside, ya can't miss him"</p>
+        <p>Totally, dude. Check inside the arcade, look for Peace Out Phil, he can hook you up."</p>
 
         <button id="continueJourney">Continue downtown</button>
     `;
@@ -1014,7 +973,7 @@ function reachArcade2() {
     updateGameImage('arcade2');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You look around and see Peace Out Phil. "Hey Bro, What's up? Can I score some weed?"</p>
+        <p>You look around and see Peace Out Phil. "Hey Bro, What's up? I'm looking to score some weed?"</p>
         <p>Phil replies, “I don’t know man, you could be a narc. If you can beat me at Street Fighting Ninja Guys I will hook you up."</p>
         <button id="acceptChallenge">Accept the video game challenge</button>
         <button id="refuseChallenge">Say, “Fuck you, I ain’t no narc!”</button>
@@ -1065,7 +1024,7 @@ function takeAdderall() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You drop your quarter into the slot and take player two on the right. The joystick and the buttons are greasy and sticky from junk food and soda from all the previous players, you feel at home.</p>
-        <p>The Adderall kicks in and you are focused and alert. The sights and sounds around you fade away and all you see are the pixels before you and the opponent to your left.</p>
+        <p>The Adderall kicks in and you are focused and alert. The sights and sounds around you fade away and all you see are the pixels on the screen.</p>
         <p>You press the start button and the game begins. Good luck stoner, hopefully all those hours tripping in the arcade pay off!</p>
         <button id="playGame">Play Street Fighting Ninja Guys</button>
     `;
@@ -1090,7 +1049,7 @@ function winGame() {
 function loseGame() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You tried your best but you didn’t play good enough, you lost! The arcade stoner says, “Dude, you suck! I ain't selling weed to a loser.</p>
+        <p>You tried your best but you didn’t play good enough, you lost! The arcade stoner says, “Sorry Dude, you knew the deal"</p>
         <button id="playAgain">Ask to play again</button>
         <button id="offerShrooms">Say, “Dude, sell me some weed and I can hook you up with some shrooms”</button>
     `;
@@ -1120,7 +1079,7 @@ function offerShrooms() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>Arcade dealer says, “Bro, the lights, the sounds, I would totally dig some shrooms and video games! I will definitely hook you up!”</p>
-        <p>Congrats Stoner, you scored some sweet bud at the arcade. Now you go home and get high!</p>
+        <p>Congrats Stoner, you scored some sweet bud at the arcade. You won, Bro, now you go home and get high!</p>
         <button id="restartGame">Restart</button>
     `;
 
