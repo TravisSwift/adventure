@@ -23,6 +23,7 @@ const images = {
     performer5: './assets/images/performer_5.png',
     performer6: './assets/images/performer_6.png',
     performer7: './assets/images/performer_7.png',
+    performer8: './assets/images/performer_8.png',
     player: './assets/images/player_determined.png',
     crowd: './assets/images/crowd.png',
     shrug: './assets/images/shrug.png',
@@ -95,7 +96,7 @@ function callDealer() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
     <p>You call your dealer!</p>    
-    <p>Your dealer says it’s all good man, come on over. Hell be home for two hours before heading out to the Pink Floyd Laser Light Show so hurry up!</p>
+    <p>Your dealer says it’s all good man, come on over. He'll be home for two hours before heading out to the Pink Floyd Laser Light Show so hurry up!</p>
         <p> This path takes you down the beach to your dealer's apartment. You grab your backpack and head out. Your backpack contains the following items to help you on your way:</p>
         <ul>
             <li>An half ounce of mushrooms</li>
@@ -117,13 +118,13 @@ function encounterSurfPunks() {
         <p>Soon, you encounter a group of surf punks blocking your way and they are not cool. "This is our turf, stoner, and you're not welcome here. You can fight or you can surf!"</p>
         <button id="surfChallenge">Accept the challenge to surf</button>
         <button id="fightPunks">Fight these punks</button>
-        <button id="offerMeth">Offer them some drugs</button>
+        <button id="offerMeth2">Offer them some drugs</button>
         <button id="explain">Explain you’re just a stoner out to score some weed</button>
     `;
 
     document.getElementById('surfChallenge').addEventListener('click', chooseSurfMethod);
     document.getElementById('fightPunks').addEventListener('click', fightPunks);
-    document.getElementById('offerMeth').addEventListener('click', offerMeth);
+    document.getElementById('offerMeth2').addEventListener('click', offerMeth2);
     document.getElementById('explain').addEventListener('click', explainSituation);
 }
 
@@ -190,7 +191,7 @@ function shroomSurf() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
          <p>This kook is gonna do everything he can to smoke you, surf strong, Brother!</p>
-         <p>He reaches out to push you off your board as you blast out of the curl. You start pumping push forward as you you ride the nose of you rboard leaving this him behind you. You're not worried about this punk at all.</p>
+         <p>He reaches out to push you off your board as you blast out of the curl. You start pumping and push forward as you you ride the nose of your board leaving him behind you. You're not worried about this punk at all.</p>
        
         <button id="continueJourney">Surf Challenge Results</button>
     `;
@@ -223,7 +224,7 @@ function surfWin() {
     dynamicContent.innerHTML = `
         <p>Cowabunga dude, you won the surf challenge! </p>
         <p>"Okay stoner, you're alright and you're welcome back anytime." </p> 
-        <p> You're now an honorory Brah to the local surf community, what a legend you are!.</p>
+        <p> You're now an honorory Brah to the local surf community, what a legend you are!</p>
         <button id="continueJourney">Continue your journey!</button>
     `;
 
@@ -317,7 +318,7 @@ function offerMeth() {
     updateGameImage('surfMeth');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>The surf punks accept the meth and let you pass. "Alright dude, we'll take some shrooms and meth and surf till dawn. This will catch you some slack today, but don’t ever come back unless you want to surf or fight!"</p>
+        <p>The surf punks accept the meth and shrooms and let you pass. "Alright dude, we'll take some shrooms and meth and surf till dawn. This will catch you some slack today, but don’t ever come back unless you want to surf or fight!"</p>
         <button id="continueJourney">Continue to your journey.</button>
     `;
 
@@ -332,13 +333,32 @@ function explainSituation() {
         <p>The surf punks say, “Sorry bro, you’re just a loser with no weed. You can fight or surf!"</p>
         <button id="fightPunks">Fight</button>
         <button id="surfChallenge">Surf</button>
-        <button id="offerMeth">Offer them some meth</button>
     `;
 
     document.getElementById('fightPunks').addEventListener('click', fightPunks);
     document.getElementById('surfChallenge').addEventListener('click', chooseSurfMethod);
-    document.getElementById('offerMeth').addEventListener('click', offerMeth);
+    document.getElementById('offerMeth2').addEventListener('click', offerMeth2);
 }
+
+
+// Function to handle offering meth to the surf punks part one
+function offerMeth2() {
+    updateGameImage('surfMeth');
+    const dynamicContent = document.getElementById('dynamicContent');
+    dynamicContent.innerHTML = `
+        <p>The beach is for everyone, dudes, let's be cool. I can hook you up with some shrooms and some meth and you can party all night!</p>
+        <button id="continueJourney">Offer shrooms and meth</button>
+    `;
+
+    document.getElementById('continueJourney').addEventListener('click', function () {
+        if (Math.random() < 0.5) {
+            offerMeth();
+        } else {
+            explainSituation();
+        }
+    });
+}
+
 
 // Function to handle the encounter with the beach babes
 function encounterBeachBabes() {
@@ -524,7 +544,7 @@ function successChase() {
     updateGameImage('performer7');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You tackle the performer and grab your cash back. The performer flees, and you continue your journey.</p>
+        <p>You tackle the performer and grab your cash back. The performer runs off down the boardwalk.</p>
         <p>Shaking your head you think, “What’s the world coming to when you can’t trust a street performer!”</p>
         <button id="continueJourney">Continue on your journey</button>
     `;
@@ -544,12 +564,12 @@ function failChase() {
 
 // Function to handle questioning the performer's legitimacy
 function questionLegitimacy() {
-    updateGameImage('performer5');
+    updateGameImage('performer8');
     const dynamicContent = document.getElementById('dynamicContent');
     const isCop = Math.random() < 0.3;
     if (isCop) {
         dynamicContent.innerHTML = `
-            <p>The performer looks offended and then flashes a badge. "Alright, you've got guts, but this is where it ends." The performer arrests you for attempting to buy drugs.</p>
+            <p>The performer smiles and then flashes a badge. "Your days of smoking the Devil's Lettuce are over, punk." The undercover narc entraps you and you're arrested for attempting to buy drugs.</p>
             <p>Sorry dude, you're Busted! Game over.</p>
             <button id="restartGame">Restart</button>
         `;
@@ -557,6 +577,7 @@ function questionLegitimacy() {
             location.reload();
         });
     } else {
+        updateGameImage('performer5');
         dynamicContent.innerHTML = `
             <p>The performer looks offended and raises his voice. "You questioning me? I should call the beach cops and tell them you're selling here!"</p>
             <button id="callBluff">Call his bluff</button>
@@ -633,7 +654,7 @@ function continueJourneyToDealersHouse() {
     dynamicContent.innerHTML = `
         <p>Dude! You finally made it to your dealer's house and scored some weed! </p>
         <p> You smoke a few joints, share the story of your bud run, and have some great laughs.</p>
-        <p>Great job, Stoner, you won the game!</p>
+        <p>Good job, Stoner, you won the game!</p>
         <button id="restartGame">Restart</button>
     `;
 
@@ -669,7 +690,7 @@ function initialEncounterStranger() {
         <button id="giveMoney">Give him $20.00</button>
         <button id="sayNo">Say, “Take a hike, Bro, I know this scam”</button>
         <button id="askMore">Ask him to tell you more about his troubles</button>
-        <button id="giveWhiskey">Give him the pint of whiskey</button>
+        <button id="giveWhiskey">Give him the bottle of whiskey</button>
     `;
 
     document.getElementById('giveMoney').addEventListener('click', giveMoneyToStranger);
@@ -687,7 +708,7 @@ function encounterStranger() {
         <button id="giveMoney">Give him $20.00</button>
         <button id="sayNo">Say, “Take a hike, Bro, I know this scam”</button>
         <button id="askMore">Ask him to tell you more about his troubles</button>
-        <button id="giveWhiskey">Give him the pint of whiskey</button>
+        <button id="giveWhiskey">Give him the bottle of whiskey</button>
     `;
 
     document.getElementById('giveMoney').addEventListener('click', giveMoneyToStranger);
@@ -699,15 +720,18 @@ function encounterStranger() {
 // Function to get a random response from the stranger without repeating the same response twice in a row
 function getRandomStrangerResponse() {
     const responses = [
-        "Hey man, I ran outta gas a few blocks away, I haven’t eaten in six weeks, My dog has lost one of his legs in a tragic lawnmower accident. If you could just loan me a couple of bucks I would be happy to get that money back to you just as soon as I get paid next week.",
-        "Hey, $20.00 will help me out a lot. My dog lost an eye in a wrestling match and I need to buy him an eye patch.",
-        "Hey, my daughter has an addiction to Jenkum and if you could help out with a few dollars, I would gladly repay you next week.",
-        "Hey, my cousin's pet iguana just escaped and joined a circus, and my aunt needs a new hip after a roller derby accident. If you could spare a few bucks, I'd be forever grateful and pay you back next week.",
+        "Hey man, I ran outta gas a few blocks away, I haven’t eaten in six weeks, If you could just loan me a couple of bucks I would be happy to get that money back to you just as soon as I get paid next week.",
+        "My dog has lost one of his legs in a tragic lawnmower accident and I need a few bucks to hire a lawyer.",
+        "Hey, $20.00 will help me out a lot. My dog lost an eye in a wrestling match and I need to buy him an eye patch. They are on sale for only $20.00 at the local Piggly Wiggly store . . .",
+        "Hey, my daughter has an addiction to Jenkum and if you could help out with a few dollars for rehab, I would gladly repay you next week.",
+        "Hey, my cousin's pet iguana just escaped and joined a circus and I need to hire an investigator to find him. If you could spare a few bucks, I'd be forever grateful and pay you back next week.",
+        "Hey, my mom had an accident while playing in her roller derby league. If you could spare a few bucks for a hip replacement that would be really cool . . .",
         "Hey, my girlfriend Peach was kidnapped by her ex-boyfried, Bowser, if you could spare a few dollars for a bus ticket to Dinohattan I would gladly pay you back next Tuesday.",
         "Hey, I'm trying to help my friend Astarion defeat the vampire lord Cazador, if you could help me out with a few bucks I would be eternally grateful",
         "Hey, my life was turned upside down by two guys named Randolph and Mortimer Duke. If you could spare a few bucks so I could do some day trading I would gladly pay you back after I corner the frozen orange juice market",
         "Hey, some nihilists pissed all over my rug and I need to get it cleaned, it really tied the whole room together. If you could spare $20.00, I would really appreciate it.",
         "Hey, I am trying to build a time travel device and fix this timeline. If you could spare a few bucks . . .",
+        "Hey there, Sir. If you could help me out. I owe Big Worm $200.00 for some weed I was supposed to sell, but you know how it is. I smoked all that shit and now that fool is gonna have me and my homie Craig smoked if I don't pay him back tonight",
         "Hey, my father is a dark Sith Lord and I need a few bucks to help build a rebellion force. I would gladly pay you back next Tuesday.",
         "Hey, I'm a retired hitman and my dog was killed, and I need some funds to seek revenge. Can you spare some money for a fellow dog lover?.",
         "Some friends and I need to return a ring to a mountain for some crazy wizard, if you could spare a few bucks that would be really cool",
@@ -719,6 +743,10 @@ function getRandomStrangerResponse() {
         "Hey, my friend Fonzie needs to get to California so he can jump a shark and show the California Kid he's not a coward, so for just a few dollars . . .",
         "Hey, I'm sober, give me some fucking money.",
         "Klaatu barada nikto.",
+        "I'm collecting money for low income kids in Beverly Hills. They suffer so much and really need your help.",
+        "I have not smoked any weed in over six hours. If you could give me some money so I could get high, then, I would be high and not bothering people on the street . . .",
+        "Excuse me, Sir.  it's Friday, I ain't got no job, and I ain't got shit to do. Maybe you could hook me up with $20.00",
+        "Sir, do you have $20.00 to spare? Because it would be a whole lot cooler if you did.",
         "Have you ever danced with the devil in the pale moonlight? Well, it costs $20.00 so, if you could help me out . . ."
 
 
@@ -749,7 +777,7 @@ function sayNoToStranger() {
         <p>This dude gets mad that you won’t give him any money and takes a swing at you.</p>
         <button id="fightStranger">Fight</button>
         <button id="giveMoney">Give him $20.00</button>
-        <button id="giveWhiskey">Give him the pint of whiskey</button>
+        <button id="giveWhiskey">Give him the bottle of whiskey</button>
     `;
 
     document.getElementById('fightStranger').addEventListener('click', fightStranger);
@@ -775,7 +803,7 @@ function giveWhiskeyToStranger() {
     updateGameImage('homeless6');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>"Thank you, Thank you, good Sir!" he mumbles as he takes the pint of whiskey and wanders away.</p>
+        <p>"Thank you, Thank you, good Sir!" he mumbles as he takes the bottle of whiskey and wanders away.</p>
         <button id="continueJourney">Continue downtown</button>
     `;
 
@@ -930,7 +958,7 @@ function playDumb() {
     updateGameImage('cops6');
     const dynamicContent = document.getElementById('dynamicContent');
     // if (Math.random() > 0.5) {
-        dynamicContent.innerHTML = `
+    dynamicContent.innerHTML = `
         <p>Cops say, “Too stoned and stupid, huh? Maybe we need to beat a little intelligence into you?”</p>
         
             <button id="bribeCops">Bribe the cops</button>
@@ -938,20 +966,20 @@ function playDumb() {
     `;
     document.getElementById('bribeCops').addEventListener('click', bribeCops);
     document.getElementById('run').addEventListener('click', runFromCops);
-       
-    }
+
+}
 
 
 function playDumb2() {
     updateGameImage('cops6');
     const dynamicContent = document.getElementById('dynamicContent');
- 
-        dynamicContent.innerHTML = `
+
+    dynamicContent.innerHTML = `
         <p>"You’re too stoned and stupid to cause any trouble here. Now get your hippie ass out of our sight!"</p>
         <button id="continueJourney">Continue downtown</button>
     `;
     document.getElementById('continueJourney').addEventListener('click', reachArcade);
- 
+
 }
 
 // Function to handle before reaching the arcade
@@ -1037,7 +1065,7 @@ function winGame() {
     updateGameImage('arcade6');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You won the game! The arcade stoner says, “Alright dude, you’re cool. Let me hook you up."</p>
+        <p>You won the game! Peace Out Phil says, “Alright dude, you’re cool. Let me hook you up."</p>
         <p>Congrats Stoner, you scored some sweet bud at the arcade. Now you go home and get high!</p>
         <button id="restartGame">Restart</button>
     `;
@@ -1049,7 +1077,7 @@ function winGame() {
 function loseGame() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You tried your best but you didn’t play good enough, you lost! The arcade stoner says, “Sorry Dude, you knew the deal"</p>
+        <p>You tried your best but you didn’t play good enough, you lost! The Peace Out Phil says, “Sorry Dude, you knew the deal"</p>
         <button id="playAgain">Ask to play again</button>
         <button id="offerShrooms">Say, “Dude, sell me some weed and I can hook you up with some shrooms”</button>
     `;
