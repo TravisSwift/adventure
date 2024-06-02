@@ -318,7 +318,8 @@ function offerMeth() {
     updateGameImage('surfMeth');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>The surf punks accept the meth and shrooms and let you pass. "Alright dude, we'll take some shrooms and meth and surf till dawn. This will catch you some slack today, but don’t ever come back unless you want to surf or fight!"</p>
+        <p>The surf punks accept the meth and shrooms and let you pass. </p> 
+        <p>"Alright dude, we'll take your drugs and surf till dawn. This will catch you some slack today, but don’t ever come back unless you want to surf or fight!"</p>
         <button id="continueJourney">Continue to your journey.</button>
     `;
 
@@ -346,7 +347,7 @@ function offerMeth2() {
     updateGameImage('surfMeth');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>The beach is for everyone, dudes, let's be cool. I can hook you up with some shrooms and some meth and you can party all night!</p>
+        <p>The beach is for everyone, dudes, let's be cool. I can hook you up with some shrooms and some meth and you can surf and party all night!</p>
         <button id="continueJourney">Offer shrooms and meth</button>
     `;
 
@@ -382,8 +383,9 @@ function hangWithBabes() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You share your stash with your new found Beach Babe Stoner friends and they share theirs with you. They don't have any to sell but still smoke you out.</p>
-        <p> Sitting around a bonfire you sip whiskey, trip on shrooms, and smoke weed. You play guitar and watch the sun set on the oceans horizon, an absoultely beautiful evening but . . . </p>
-        <p> you got distracted and forgot your dealer was going to the Pink Floyd Laser Light Show and now he's gone. I hope you got laid, stoner. You didn't win, but did you really lose? </p> 
+        <p> Sitting around a bonfire you sip whiskey, trip on shrooms, and smoke weed all night. You play guitar and watch the sun set on the oceans horizon, an absoultely beautiful evening but . . . </p>
+        <p> you got distracted and forgot your dealer was going to the Pink Floyd Laser Light Show and now he's gone and no score for you today.</p>
+        <p> You didn't win, but did you really lose? </p> 
         <p> Game over, Bro.</p>
         <button id="restartGame">Restart Game</button>
     `;
@@ -454,7 +456,8 @@ function callOutKardashians() {
     updateGameImage('selfie');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>The Beach Babes grab their cell phones and run down the beach to get a selfie for their social media feeds and you are free to continue your journey. You dodged a bullet, Stoner, good for you!</p>
+    <p>The Beach Babes run down the beach to get a selfie for their social media feeds and you are free to continue your journey. </p>
+    <p>Nice move, Stoner, good for you.</p>
         <button id="continueJourney">Continue your journey</button>
     `;
 
@@ -722,7 +725,7 @@ function getRandomStrangerResponse() {
     const responses = [
         "Hey man, I ran outta gas a few blocks away, I haven’t eaten in six weeks, If you could just loan me a couple of bucks I would be happy to get that money back to you just as soon as I get paid next week.",
         "My dog has lost one of his legs in a tragic lawnmower accident and I need a few bucks to hire a lawyer.",
-        "Hey, $20.00 will help me out a lot. My dog lost an eye in a wrestling match and I need to buy him an eye patch. They are on sale for only $20.00 at the local Piggly Wiggly store . . .",
+        "Hey, my dog lost an eye in a wrestling match and I need to buy him an eye patch. They are on sale for only $20.00 at the local Piggly Wiggly store . . .",
         "Hey, my daughter has an addiction to Jenkum and if you could help out with a few dollars for rehab, I would gladly repay you next week.",
         "Hey, my cousin's pet iguana just escaped and joined a circus and I need to hire an investigator to find him. If you could spare a few bucks, I'd be forever grateful and pay you back next week.",
         "Hey, my mom had an accident while playing in her roller derby league. If you could spare a few bucks for a hip replacement that would be really cool . . .",
@@ -731,7 +734,7 @@ function getRandomStrangerResponse() {
         "Hey, my life was turned upside down by two guys named Randolph and Mortimer Duke. If you could spare a few bucks so I could do some day trading I would gladly pay you back after I corner the frozen orange juice market",
         "Hey, some nihilists pissed all over my rug and I need to get it cleaned, it really tied the whole room together. If you could spare $20.00, I would really appreciate it.",
         "Hey, I am trying to build a time travel device and fix this timeline. If you could spare a few bucks . . .",
-        "Hey there, Sir. If you could help me out. I owe Big Worm $200.00 for some weed I was supposed to sell, but you know how it is. I smoked all that shit and now that fool is gonna have me and my homie Craig smoked if I don't pay him back tonight",
+        "Hey there, Sir. If you could help me out. I owe Big Worm $200.00 for some weed I was supposed to sell, but you know how it is. I smoked all that shit and now that fool is gonna have me and my homie Craig smoked if I don't pay him back by 10:00 tonight.",
         "Hey, my father is a dark Sith Lord and I need a few bucks to help build a rebellion force. I would gladly pay you back next Tuesday.",
         "Hey, I'm a retired hitman and my dog was killed, and I need some funds to seek revenge. Can you spare some money for a fellow dog lover?.",
         "Some friends and I need to return a ring to a mountain for some crazy wizard, if you could spare a few bucks that would be really cool",
@@ -741,12 +744,13 @@ function getRandomStrangerResponse() {
         "My cousin in Philly got into one little fight and his aunt got scared and I just need a few more dollars to get him to Bel-Air",
         "I've got 99 problems and a bitch ain't one, but I do need a few dollars for some whiskey, I mean, booze, I mean, food. Yeah, food.",
         "Hey, my friend Fonzie needs to get to California so he can jump a shark and show the California Kid he's not a coward, so for just a few dollars . . .",
+        "Excuse me, Sir. All I need are some tasty waves, a cool buzz and $20.00.",
         "Hey, I'm sober, give me some fucking money.",
         "Klaatu barada nikto.",
         "I'm collecting money for low income kids in Beverly Hills. They suffer so much and really need your help.",
         "I have not smoked any weed in over six hours. If you could give me some money so I could get high, then, I would be high and not bothering people on the street . . .",
         "Excuse me, Sir.  it's Friday, I ain't got no job, and I ain't got shit to do. Maybe you could hook me up with $20.00",
-        "Sir, do you have $20.00 to spare? Because it would be a whole lot cooler if you did.",
+        "Sir, do you have $20.00 to spare? Because it would be a lot cooler if you did.",
         "Have you ever danced with the devil in the pale moonlight? Well, it costs $20.00 so, if you could help me out . . ."
 
 
@@ -829,7 +833,7 @@ function encounterCops() {
         <p>Walking downtown you see a group of cops on the corner and they are eyeballing you.</p>
         <button id="keepHeadDown">Keep your head down and your mouth shut and walk on by</button>
         <button id="yellAtCops">Yell out “Fuck you pigs” as you walk by</button>
-        <button id="nodAtCops">Make eye contact and give a nod of “what’s up” as you keep on walking/button>
+        <button id="nodAtCops">Make eye contact and give a nod of “what’s up” as you keep on walking</button>
     `;
 
     document.getElementById('keepHeadDown').addEventListener('click', keepHeadDown);
@@ -1004,13 +1008,12 @@ function reachArcade2() {
         <p>You look around and see Peace Out Phil. "Hey Bro, What's up? I'm looking to score some weed?"</p>
         <p>Phil replies, “I don’t know man, you could be a narc. If you can beat me at Street Fighting Ninja Guys I will hook you up."</p>
         <button id="acceptChallenge">Accept the video game challenge</button>
-        <button id="refuseChallenge">Say, “Fuck you, I ain’t no narc!”</button>
-        <button id="offerShrooms">Say, “Dude, sell me some weed and I can hook you up with some shrooms”</button>
+        <button id="refuseChallenge">Say, “Be cool, Bro, I ain’t no narc!”</button>
     `;
 
     document.getElementById('acceptChallenge').addEventListener('click', acceptChallenge);
     document.getElementById('refuseChallenge').addEventListener('click', refuseChallenge);
-    document.getElementById('offerShrooms').addEventListener('click', offerShrooms);
+    
 }
 
 // Function to handle accepting the video game challenge
@@ -1066,7 +1069,7 @@ function winGame() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
         <p>You won the game! Peace Out Phil says, “Alright dude, you’re cool. Let me hook you up."</p>
-        <p>Congrats Stoner, you scored some sweet bud at the arcade. Now you go home and get high!</p>
+        <p>Congrats Stoner, you scored some sweet bud at the arcade. Now you go home and get high, you won the game.</p>
         <button id="restartGame">Restart</button>
     `;
 
@@ -1077,7 +1080,8 @@ function winGame() {
 function loseGame() {
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>You tried your best but you didn’t play good enough, you lost! The Peace Out Phil says, “Sorry Dude, you knew the deal"</p>
+        <p>You tried your best but you didn’t play good enough, you lost! You better work on those comobo movies. </p>
+        <p>The Peace Out Phil says, “Sorry Dude, you knew the deal"</p>
         <button id="playAgain">Ask to play again</button>
         <button id="offerShrooms">Say, “Dude, sell me some weed and I can hook you up with some shrooms”</button>
     `;
@@ -1106,7 +1110,7 @@ function offerShrooms() {
     updateGameImage('arcade5');
     const dynamicContent = document.getElementById('dynamicContent');
     dynamicContent.innerHTML = `
-        <p>Arcade dealer says, “Bro, the lights, the sounds, I would totally dig some shrooms and video games! I will definitely hook you up!”</p>
+        <p>Peace Out Phil says, “Bro, the lights, the sounds, I would totally dig some shrooms and video games! I will definitely hook you up!”</p>
         <p>Congrats Stoner, you scored some sweet bud at the arcade. You won, Bro, now you go home and get high!</p>
         <button id="restartGame">Restart</button>
     `;
